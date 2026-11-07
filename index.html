@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#120e22">
+  <title>Johanna, mi vida ♡</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- PORTADA -->
+  <section class="portada" id="portada">
+    <div class="estrellas" aria-hidden="true"></div>
+
+    <div class="portada-contenido">
+      <div class="luna" aria-hidden="true">☾</div>
+      <div class="etiqueta">Un pequeño universo hecho para ti</div>
+
+      <h1>Johanna, mi vida ♡</h1>
+
+      <p>
+        Hay personas que hacen más bonito nuestro universo.
+        Hoy quiero celebrar el tuyo con lo que he conocido de ti durante este tiempo.
+      </p>
+
+      <button class="boton" id="entrarRegalo">
+        Descubrir mi regalo ✦
+      </button>
+    </div>
+  </section>
+
+  <!-- PÁGINA PRINCIPAL -->
+  <div class="contenido oculto" id="contenido">
+
+    <nav class="navegacion" aria-label="Navegación principal">
+      <div class="logo">JOHANNA'S UNIVERSE ✦</div>
+
+      <div class="enlaces">
+        <button data-ir="bienvenida">Bienvenida</button>
+        <button data-ir="mundos">Mundos</button>
+        <button data-ir="album">Recuerdos</button>
+        <button data-ir="cartas">Cartas</button>
+        <button data-ir="sorpresa">Sorpresa</button>
+      </div>
+    </nav>
+
+    <!-- BIENVENIDA -->
+    <section class="bienvenida" id="bienvenida">
+      <div class="etiqueta">Hoy todo este universo celebra</div>
+
+      <h2>Feliz cumpleaños, mi vida ♡</h2>
+
+      <p>
+        Espero que este día te recuerde lo especial que eres
+        y lo importante que eres para mí, y lo lindo que es tener
+        a una persona como tú en mi vida.
+
+        Preparé este pequeño universo pensando en ti,
+        en las cosas que te gustan, algunos recuerdos, unas palabras,
+        y mis sentimientos que tengo hacia ti.
+      </p>
+
+      <p class="firma">
+        Con todo mi cariño y amor para mi niña. ♡
+      </p>
+
+      <button class="boton" data-ir="mundos">
+        Explorar tus mundos ✦
+      </button>
+    </section>
+
+    <!-- MUNDOS -->
+    <section class="mundos" id="mundos">
+      <div class="titulo-seccion">
+        <div class="etiqueta">Tres pequeños universos</div>
+        <h2>Tres mundos, una sola persona ♡</h2>
+        <p>
+          Cada portal guarda un poquito de las cosas que te gustan.
+          ¿Cuál quieres descubrir primero?
+        </p>
+      </div>
+
+      <div class="tarjetas">
+
+        <!-- BOB ESPONJA -->
+        <article class="mundo bob">
+          <div>
+            <div class="etiqueta">Parte 1 · Bajo el mar</div>
+
+            <img
+              class="imagen-mundo"
+              src="imagenes/bob.png"
+              alt="Bob Esponja"
+            >
+
+            <h3>Una aventura bajo el mar</h3>
+
+            <p>
+              En algún lugar de Fondo de Bikini hay un tesoro escondido.
+              Dicen que es muy especial, pero para encontrarlo tendrás
+              que descubrir tres pequeñas pistas.
+              ¿Te animas a buscarlo?
+            </p>
+          </div>
+
+          <button data-mundo="bob">
+            Entrar al mundo ✦
+          </button>
+        </article>
+
+        <!-- SPIDER-MAN -->
+        <article class="mundo spider">
+          <div>
+            <div class="etiqueta">Parte 2 · Modo héroe</div>
+
+            <img
+              class="imagen-mundo"
+              src="imagenes/spiderman.png"
+              alt="Spider-Man"
+            >
+
+            <h3>Spider-Verse</h3>
+
+            <p>
+              ¡Atención, Johanna! Hay una misión esperando por ti.
+              Una carta secreta ha quedado atrapada entre telarañas
+              y solo tú puedes liberarla.
+              ¿Estás lista para descubrir qué dice?
+            </p>
+          </div>
+
+          <button data-mundo="spider">
+            Entrar al mundo ✦
+          </button>
+        </article>
+
+        <!-- HELLO KITTY -->
+        <article class="mundo kitty">
+          <div>
+            <div class="etiqueta">Parte 3 · Pura ternura</div>
+
+            <img
+              class="imagen-mundo"
+              src="imagenes/kitty.png"
+              alt="Hello Kitty"
+            >
+
+            <h3>Hello Kitty</h3>
+
+            <p>
+              En este pequeño jardín hay una semillita que necesita
+              de tus cuidados para crecer.
+              Dicen que, cuando florece, revela algo muy especial.
+              ¿Quieres descubrirlo?
+
+            </p>
+          </div>
+
+          <button data-mundo="kitty">
+            Entrar al mundo ✦
+          </button>
+        </article>
+
+      </div>
+
+      <!-- PORTAL PARA LAS TRES AVENTURAS -->
+      <div class="portal" id="portal" aria-live="polite">
+
+        <div class="etiqueta">Portal desbloqueado</div>
+
+        <h3 id="tituloPortal"></h3>
+
+        <p id="textoPortal"></p>
+
+        <div
+          class="aventura-portal"
+          id="aventuraPortal">
+        </div>
+
+        <button class="boton" id="cerrarPortal">
+          Volver a los mundos ♡
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ÁLBUM -->
+    <section class="album" id="album">
+      <div class="titulo-seccion">
+        <div class="etiqueta">Nuestros pequeños momentos</div>
+        <h2>Un pedacito de nosotros 📸</h2>
+        <p>
+          No necesitamos cientos de fotografías
+          para guardar recuerdos inolvidables.
+          Cada momento contigo tiene algo especial.
+        </p>
+      </div>
+
+      <div class="album-grid">
+
+        <article class="foto-recuerdo">
+          <img
+            src="imagenes/recuerdo1.jpg"
+            alt="Nuestro primer recuerdo"
+            loading="lazy"
+          >
+          <p>Qué bonito fue coincidir contigo ♡</p>
+        </article>
+
+        <article class="foto-recuerdo">
+          <img
+            src="imagenes/recuerdo2.jpg"
+            alt="Un momento especial juntos"
+            loading="lazy"
+          >
+          <p>Contigo todo es más bonito ✦</p>
+        </article>
+
+        <article class="foto-recuerdo">
+          <img
+            src="imagenes/recuerdo3.jpg"
+            alt="Otro recuerdo especial"
+            loading="lazy"
+          >
+          <p>Por muchos recuerdos más ♡</p>
+        </article>
+
+      </div>
+
+      <p class="nota-album">
+        No tenemos miles de fotografías, pero cada una
+        guarda un pedacito de nuestra historia.
+        Y lo más bonito es que todavía nos quedan
+        muchísimos recuerdos por crear. ♡
+      </p>
+    </section>
+
+    <!-- CARTAS -->
+    <section class="cartas" id="cartas">
+      <div class="titulo-seccion">
+        <div class="etiqueta">Palabras que guardé para ti</div>
+        <h2>Tres cartas, un mismo corazón 💌</h2>
+        <p>
+          Hay cosas que merecen decirse
+          con todo el cariño del mundo.
+          Elige un sobre para descubrirlas.
+        </p>
+      </div>
+
+      <div class="cartas-grid">
+
+        <button class="sobre" data-carta="cosita">
+          <span class="sobre-icono">💌</span>
+          <strong>Para mi niña</strong>
+        </button>
+
+        <button class="sobre" data-carta="carino">
+          <span class="sobre-icono">💗</span>
+          <strong>Para mi cariño</strong>
+        </button>
+
+        <button class="sobre" data-carta="vida">
+          <span class="sobre-icono">💜</span>
+          <strong>Para mi vida</strong>
+        </button>
+
+      </div>
+
+      <div
+        class="carta-abierta"
+        id="cartaAbierta"
+        aria-live="polite">
+
+        <h3 id="tituloCarta"></h3>
+
+        <p id="contenidoCarta"></p>
+
+        <button id="cerrarCarta">
+          Cerrar carta ♡
+        </button>
+
+      </div>
+    </section>
+
+    <!-- SORPRESA FINAL -->
+    <section class="sorpresa" id="sorpresa">
+      <div class="titulo-seccion">
+        <div class="etiqueta">El último rincón de tu universo</div>
+        <h2>Una última sorpresa para ti ✨</h2>
+        <p>
+          Has llegado al final de este pequeño viaje,
+          pero todavía queda algo que quiero decirte.
+        </p>
+      </div>
+
+      <button
+        class="regalo"
+        id="botonRegalo"
+        aria-label="Abrir regalo sorpresa">
+        🎁
+      </button>
+
+      <p id="instruccionRegalo">
+        Toca el regalo para descubrir tu sorpresa ♡
+      </p>
+
+      <div
+        class="mensaje-final"
+        id="mensajeFinal"
+        aria-live="polite">
+
+        <h3>¡Feliz cumpleaños, Johanna! ♡</h3>
+
+        <p>
+          Mi vida, hoy quiero recordarte
+          lo especial que eres para mí.
+
+          Este pequeño universo lo hice pensando
+          en ti, en tu sonrisa, en tu mirada,
+          en tu manera de ver las cosas, en tu 
+          forma de ser y en todas esas
+          cosas que te hacen única.
+
+          Ojalá pudiera guardar cada instante
+          bonito contigo en un lugar donde
+          nunca se perdiera o donde fueran
+          permanente, pero las llevo en mi memoria
+          mas queria plasmarlas de esta manera tan
+          unica y especial para ti.
+
+          Gracias por formar parte de mi vida
+          y por hacerla mucho más bonita. Creeme
+          que eres una mujer increible y me alegra mucho
+          tenerte en ella, enserio nunca me faltes.
+
+          Y aunque es mi primer cumpleaños a tu lado 
+          espero que no sea el unico que este presente
+          porque hay muchos mas que quiero vivir y 
+          compartir a tu lado. 
+
+          Enserio estoy muy feliz y emocionado por 
+          este dia sinceramente, la pasare contigo y 
+          eso es lo mejor, aunque no como me gustaria al 
+          menos sera a tu lado.
+
+          Feliz cumpleaños, mi Cosita.
+          Que nunca te falten razones para sonreír.
+
+          Con todo mi cariño, siempre. ♡
+        </p>
+
+      </div>
+    </section>
+
+    <footer>
+      Hecho con mucho amor para mi niña,
+      mi cariño, mi cosita y mi vida. ♡
+    </footer>
+
+  </div>
+
+</body>
+</html>

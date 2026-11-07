@@ -1,0 +1,797 @@
+
+/* =====================================
+   JOHANNA'S UNIVERSE - ESTILOS
+===================================== */
+
+:root {
+  --noche: #120e22;
+  --morado: #7956a8;
+  --rosa: #f5bedb;
+  --blanco: #fff9ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+body {
+  margin: 0;
+  background: var(--noche);
+  color: var(--blanco);
+  font-family: Georgia, serif;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 3px solid #ffe49b;
+  outline-offset: 4px;
+}
+
+.oculto {
+  display: none !important;
+}
+
+.etiqueta {
+  font: 11px/1.6 Arial, sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #dcc7ff;
+}
+
+.boton {
+  border: 1px solid #ebd4ff;
+  background: linear-gradient(135deg, #9571c5, #62448f);
+  color: white;
+  padding: 15px 26px;
+  border-radius: 50px;
+  margin-top: 24px;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.boton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px #a77aff55;
+}
+
+/* PORTADA */
+
+.portada {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse at center,
+    #493267 0%,
+    #251a3a 48%,
+    #100d1d 100%
+  );
+}
+
+.estrellas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 15% 25%, white 99%, transparent),
+    radial-gradient(2px 2px at 75% 15%, white 99%, transparent),
+    radial-gradient(1px 1px at 45% 70%, white 99%, transparent),
+    radial-gradient(2px 2px at 85% 80%, white 99%, transparent),
+    radial-gradient(1px 1px at 25% 85%, white 99%, transparent);
+  background-size: 280px 240px;
+  animation: brillar 4s ease-in-out infinite alternate;
+}
+
+.portada-contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.luna {
+  font-size: 65px;
+  color: #f0dbff;
+  text-shadow: 0 0 30px #e4baff;
+}
+
+h1 {
+  font-size: clamp(42px, 9vw, 78px);
+  font-weight: normal;
+  margin: 20px 0;
+}
+
+.portada p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #e9ddf4;
+}
+
+/* NAVEGACIÓN */
+
+.contenido {
+  background: linear-gradient(#241a39, #120e22);
+  min-height: 100vh;
+}
+
+.navegacion {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 15px 6%;
+  background: #140f25ed;
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #ffffff22;
+}
+
+.logo {
+  font: bold 12px Arial, sans-serif;
+  letter-spacing: 2px;
+  color: #e9d5ff;
+}
+
+.enlaces {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.enlaces button {
+  background: transparent;
+  color: white;
+  border: 1px solid #ffffff44;
+  border-radius: 30px;
+  padding: 9px 12px;
+  font: 12px Arial, sans-serif;
+}
+
+/* BIENVENIDA */
+
+.bienvenida {
+  text-align: center;
+  padding: 85px 20px 65px;
+  max-width: 760px;
+  margin: auto;
+}
+
+.bienvenida h2,
+.titulo-seccion h2 {
+  font-size: clamp(34px, 7vw, 54px);
+  font-weight: normal;
+}
+
+.bienvenida > p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #e5d9ee;
+}
+
+.firma {
+  color: var(--rosa) !important;
+  font-style: italic;
+}
+
+/* SECCIONES */
+
+.mundos,
+.album,
+.cartas,
+.sorpresa {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.album,
+.cartas,
+.sorpresa {
+  border-top: 1px solid #ffffff20;
+}
+
+.titulo-seccion {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.titulo-seccion p {
+  color: #d0c3de;
+  font: 15px/1.7 Arial, sans-serif;
+  max-width: 650px;
+  margin: auto;
+}
+
+/* TARJETAS DE LOS MUNDOS */
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.mundo {
+  min-height: 380px;
+  padding: 26px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ffffff55;
+  box-shadow: 0 15px 35px #0005;
+  transition: transform .3s;
+  overflow: hidden;
+}
+
+.mundo:hover {
+  transform: translateY(-8px);
+}
+
+.bob {
+  background: linear-gradient(145deg, #17b5d0, #075c89, #06365e);
+}
+
+.spider {
+  background: linear-gradient(145deg, #ef4857, #9b1531, #210d25);
+}
+
+.kitty {
+  background: linear-gradient(145deg, #e4b4ee, #9d79c6, #574176);
+}
+
+.imagen-mundo {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  margin: 20px auto;
+  filter: drop-shadow(0 12px 14px #0005);
+  transition: transform .3s ease;
+}
+
+.mundo:hover .imagen-mundo {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.mundo h3 {
+  font-size: 31px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.mundo p {
+  font: 14px/1.7 Arial, sans-serif;
+}
+
+.mundo button {
+  align-self: flex-start;
+  padding: 12px 18px;
+  background: #ffffff25;
+  border: 1px solid white;
+  border-radius: 40px;
+  color: white;
+  font: 13px Arial, sans-serif;
+}
+
+.mundo button:hover {
+  background: white;
+  color: #271b3b;
+}
+
+/* PORTAL DE AVENTURAS */
+
+.portal {
+  display: none;
+  max-width: 780px;
+  margin: 30px auto 0;
+  padding: 30px;
+  border-radius: 22px;
+  border: 1px solid #ffffff44;
+  background: #ffffff10;
+  text-align: center;
+}
+
+.portal.activo {
+  display: block;
+  animation: aparecer .4s ease;
+}
+
+.portal h3 {
+  font-size: 29px;
+  font-weight: normal;
+}
+
+.portal p {
+  font: 15px/1.8 Arial, sans-serif;
+  color: #e5d9ee;
+}
+
+.portal.portal-bob {
+  background: linear-gradient(160deg, #08658d, #06344f);
+}
+
+.portal.portal-spider {
+  background: linear-gradient(160deg, #65152b, #210d25);
+}
+
+.portal.portal-kitty {
+  background: linear-gradient(160deg, #b782c9, #69467f);
+}
+
+.aventura-portal {
+  margin-top: 25px;
+}
+
+.escenario-aventura {
+  padding: 25px 15px;
+  border-radius: 20px;
+  background: #ffffff12;
+  border: 1px solid #ffffff30;
+}
+
+.progreso-aventura {
+  font: 14px Arial, sans-serif;
+  color: #fff2fc;
+  margin-bottom: 22px;
+}
+
+.objetos-aventura {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  min-height: 150px;
+}
+
+.objeto-aventura {
+  width: 90px;
+  min-height: 90px;
+  border: 2px solid #ffffff88;
+  border-radius: 50%;
+  background: #ffffff20;
+  color: white;
+  font-size: 40px;
+  transition: transform .3s, background .3s;
+}
+
+.objeto-aventura:hover:not(:disabled) {
+  transform: scale(1.12);
+  background: #ffffff40;
+}
+
+.objeto-aventura:disabled {
+  opacity: .65;
+  cursor: default;
+}
+
+/* BOB ESPONJA */
+
+.burbuja-aventura {
+  background: radial-gradient(
+    circle at 30% 25%,
+    #ffffffaa,
+    #8ee9ff55 40%,
+    #178db466
+  );
+  box-shadow: 0 0 22px #8feaff55;
+  animation: burbujaFlotante 3s ease-in-out infinite;
+}
+
+.burbuja-aventura:nth-child(2) {
+  animation-delay: .5s;
+}
+
+.burbuja-aventura:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.cofre-aventura {
+  font-size: 90px;
+  margin: 15px auto;
+  animation: aparecer .5s ease;
+}
+
+/* SPIDER-MAN */
+
+.telaraña-aventura {
+  background: #27182e;
+  border-color: #ffb2c2;
+}
+
+.carta-secreta {
+  position: relative;
+  margin: 20px auto;
+  max-width: 340px;
+  padding: 30px 20px;
+  border-radius: 14px;
+  background: #fff2f6;
+  color: #67263e;
+  box-shadow: 0 12px 30px #0004;
+  font-size: 60px;
+}
+
+.carta-secreta .telarañas-encima {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #301b36d9;
+  border-radius: 14px;
+  font-size: 42px;
+  transition: opacity .3s;
+}
+
+.carta-secreta .telarañas-encima.liberada {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* HELLO KITTY */
+
+.flor-aventura {
+  font-size: 95px;
+  margin: 20px auto;
+  min-height: 120px;
+  animation: florCrecer .6s ease;
+}
+
+.jardin-aventura {
+  background:
+    radial-gradient(circle at 20% 20%, #ffffff33, transparent 35%),
+    linear-gradient(160deg, #dba9dc55, #9e77c555);
+}
+
+.mensaje-aventura {
+  max-width: 550px;
+  margin: 22px auto;
+  padding: 20px;
+  background: #ffffff20;
+  border: 1px solid #ffffff55;
+  border-radius: 18px;
+  font: 16px/1.8 Arial, sans-serif;
+  animation: aparecer .5s ease;
+}
+
+.boton-aventura {
+  padding: 13px 23px;
+  border: 1px solid white;
+  border-radius: 30px;
+  background: #ffffff25;
+  color: white;
+  margin-top: 15px;
+  transition: background .3s, transform .3s;
+}
+
+.boton-aventura:hover {
+  background: #ffffff45;
+  transform: translateY(-3px);
+}
+
+/* ÁLBUM */
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.foto-recuerdo {
+  background: #fff8fc;
+  color: #443253;
+  padding: 13px 13px 25px;
+  border-radius: 5px;
+  box-shadow: 0 15px 30px #0005;
+  transform: rotate(-3deg);
+  transition: transform .3s ease;
+}
+
+.foto-recuerdo:nth-child(2) {
+  transform: rotate(3deg);
+}
+
+.foto-recuerdo:hover {
+  transform: rotate(0) scale(1.04);
+}
+
+.foto-recuerdo img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background: #e8d6ef;
+  display: block;
+}
+
+.foto-recuerdo p {
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.nota-album {
+  max-width: 670px;
+  margin: 50px auto 0;
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.8;
+  color: #f2d4e8;
+}
+
+/* CARTAS */
+
+.cartas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.sobre {
+  min-height: 190px;
+  border: 1px solid #ffffff55;
+  border-radius: 20px;
+  padding: 28px 18px;
+  background: linear-gradient(135deg, #b48acb, #7954a5);
+  color: white;
+  transition: transform .3s ease;
+}
+
+.sobre:nth-child(2) {
+  background: linear-gradient(135deg, #e99ebc, #a34e80);
+}
+
+.sobre:nth-child(3) {
+  background: linear-gradient(135deg, #a5b9ef, #6554a4);
+}
+
+.sobre:hover {
+  transform: translateY(-8px);
+}
+
+.sobre-icono {
+  display: block;
+  font-size: 54px;
+  margin-bottom: 15px;
+}
+
+.sobre strong {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.carta-abierta {
+  display: none;
+  max-width: 680px;
+  margin: 35px auto 0;
+  padding: 35px;
+  background: #fff6fc;
+  color: #483153;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px #0005;
+  text-align: center;
+}
+
+.carta-abierta.activa {
+  display: block;
+  animation: aparecer .5s ease;
+}
+
+.carta-abierta h3 {
+  font-size: 29px;
+  font-weight: normal;
+}
+
+.carta-abierta p {
+  font-size: 17px;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+.carta-abierta button {
+  border: 1px solid #7954a5;
+  border-radius: 30px;
+  padding: 10px 18px;
+  color: #7954a5;
+  background: transparent;
+}
+
+/* SORPRESA FINAL */
+
+.sorpresa {
+  min-height: 550px;
+  text-align: center;
+}
+
+.regalo {
+  font-size: 100px;
+  display: block;
+  margin: 35px auto;
+  border: none;
+  background: transparent;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+.regalo:hover {
+  scale: 1.12;
+}
+
+.mensaje-final {
+  display: none;
+  max-width: 680px;
+  margin: 20px auto;
+}
+
+.mensaje-final.activo {
+  display: block;
+  animation: aparecer .7s ease;
+}
+
+.mensaje-final h3 {
+  font-size: clamp(32px, 6vw, 54px);
+  font-weight: normal;
+  color: #f7c8e3;
+}
+
+.mensaje-final p {
+  font-size: 18px;
+  line-height: 1.9;
+  white-space: pre-line;
+  color: #e8dcf2;
+}
+
+.confeti {
+  position: fixed;
+  top: -20px;
+  width: 9px;
+  height: 15px;
+  pointer-events: none;
+  z-index: 100;
+  animation: caer linear forwards;
+}
+
+/* ANIMACIONES */
+
+@keyframes brillar {
+  from { opacity: .35; }
+  to { opacity: 1; }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flotar {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -12px; }
+}
+
+@keyframes caer {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes burbujaFlotante {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes florCrecer {
+  from {
+    transform: scale(.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+footer {
+  padding: 35px 20px;
+  text-align: center;
+  color: #e9bfe0;
+  font: 13px Arial, sans-serif;
+}
+
+/* CELULARES */
+
+@media (max-width: 750px) {
+  .tarjetas,
+  .album-grid,
+  .cartas-grid {
+    grid-template-columns: 1fr;
+    max-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mundo {
+    min-height: 310px;
+  }
+
+  .foto-recuerdo img {
+    height: 280px;
+  }
+
+  .navegacion {
+    flex-direction: column;
+  }
+
+  .enlaces {
+    justify-content: center;
+  }
+
+  .bienvenida {
+    padding-top: 55px;
+  }
+
+  .carta-abierta {
+    padding: 25px 20px;
+  }
+
+  .mundos,
+  .album,
+  .cartas,
+  .sorpresa {
+    padding: 60px 20px;
+  }
+
+  .portal {
+    padding: 22px 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .objeto-aventura {
+    width: 72px;
+    min-height: 72px;
+    font-size: 32px;
+  }
+
+  .escenario-aventura {
+    padding: 20px 10px;
+  }
+
+  .flor-aventura {
+    font-size: 75px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
